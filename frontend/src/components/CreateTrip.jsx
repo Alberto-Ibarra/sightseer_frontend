@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+// import '../App.css'
 
 const CreateTrip = (props) => {
 	const handleTripChange = (e) => {
@@ -29,8 +30,9 @@ const CreateTrip = (props) => {
 	};
 	return (
 		<>
-			<div>Create Trip</div>
-			<form onSubmit={handleNewTripSubmit}>
+		<div className='container'>
+			<div className="title">Publish Your Trip</div>
+			<form className="card" onSubmit={handleNewTripSubmit}>
 				<label>Country</label>
 				<input type='text' name='country' onChange={handleTripChange} />
 
@@ -48,8 +50,9 @@ const CreateTrip = (props) => {
 
 				<label>Description</label>
 				<textarea name='description' onChange={handleTripChange} />
-				<input type='submit' value='Add Trip' />
+				<input className="button" type='submit' value='Add Trip' />
 			</form>
+			</div>
 		</>
 	);
 };

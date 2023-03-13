@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import "./App.css"
 import axios from 'axios';
 import CreateTrip from './components/CreateTrip';
 import DisplayData from './components/DisplayData'
@@ -51,8 +51,7 @@ function App() {
 	// };
 
 	return (
-		<div>
-			<h1>Test</h1>
+		<div>		
 			<CreateTrip
 				// handleTripChange={handleTripChange}
 				// handleNewTripSubmit={handleNewTripSubmit}
