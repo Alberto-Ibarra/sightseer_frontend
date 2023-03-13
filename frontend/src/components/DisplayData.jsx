@@ -41,16 +41,16 @@ const DisplayData = (props) => {
         })
     }
     
-    console.log(props.trip._id)
+    // console.log(props.trip._id)
 
     return(
         <div>
             <p>{props.trip.country}</p>
             <p>{props.trip.continent}</p>
             <button onClick={(e) => handleDelete(props.trip)}>DELETE</button>
-            <input type='text' placeholder={props.trip.continent} onChange={(e) => handleInputEdit(e, props.trip._id)}></input>
-            <input type='text' placeholder={props.trip.country} onChange={(e) => handleInputEdit(e, props.trip._id)}></input>
-            <button onClick={(e) => handleUpdate(e, props.trip._id)}>Update</button>
+            <input type='text' placeholder={props.trip.continent} onChange={(e) => handleInputEdit(e.props.trip._id)}></input>
+            <input type='text' placeholder={props.trip.country} onChange={(e) => handleInputEdit(e.props.trip._id)}></input>
+            <button onClick={(e) => handleUpdate(e.props.trip._id)}>Update</button>
         </div>
     )
 }
