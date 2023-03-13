@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 import axios from 'axios';
 import CreateTrip from './components/CreateTrip';
+import DisplayData from './components/DisplayData'
+
 function App() {
 	const [trips, setTrips] = useState([]);
 	const [newTrip, setNewTrip] = useState({
@@ -22,6 +24,8 @@ function App() {
 			setTrips(res.data)
 		});
 	};
+
+
 	useEffect(()=> {
 		getTrips();
 	},[])
@@ -60,6 +64,18 @@ function App() {
 				setUpdated={setUpdated}
 				updated={updated}
 			/>
+      <section>
+        {
+          trips.map((trip) => {
+            return(
+             <DisplayData 
+             setTrips={setTrips}
+             trip = {trip}
+             />
+            )
+          })
+        }
+      </section>
 		</div>
 	);
 }
