@@ -25,11 +25,22 @@ function App() {
 			[name]: value,
 		}));
 	};
+	const handleNewTripSubmit = (e) => {
+		e.preventDefault();
+		axios.post('http://localhost:3000/sights', newTrip).then(() => {
+			axios.get('http://localhost:3000/sights').then((res) => {
+				setTrips(res.data);
+			});
+		});
+	};
 
 	return (
 		<div>
 			<h1>Test</h1>
-			<CreateTrip handleTripChange={handleTripChange} />
+			<CreateTrip
+				handleTripChange={handleTripChange}
+				handleNewTripSubmit={handleNewTripSubmit}
+			/>
 		</div>
 	);
 }
