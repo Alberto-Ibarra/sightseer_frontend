@@ -6,7 +6,14 @@ import './App.css';
 // wrap createtrip jsx in a state to display
 function App() {
 	const [trips,setTrips] = useState([]);
-	const [newtrip, setNewTrip] = useState({})
+	const [newtrip, setNewTrip] = useState({
+		county:'',
+		continent:'',
+		rating:0,
+		season:'',
+		image:'',
+		description:''
+	})
 	return (
 		<div className='App'>
 			<header className='App-header'>
@@ -26,12 +33,3 @@ function App() {
 	);
 }
 
-export default App;
-	const handleTripChange = (e) => {
-		const name = e.target.name;
-		const value = e.target.value;
-		setNewTrip((prevState) => ({
-			...prevState,
-			[name]: value,
-		}));
-	};
