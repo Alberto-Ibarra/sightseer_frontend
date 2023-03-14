@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React, { useState } from 'react';
+import axios from 'axios';
 // import '../App.css'
 
 const CreateTrip = ({ newTrip, setNewTrip, setTrips, updated, setUpdated }) => {
@@ -41,49 +41,34 @@ const CreateTrip = ({ newTrip, setNewTrip, setTrips, updated, setUpdated }) => {
 						onChange={handleTripChange}
 					/>
 
-          <input
-            type="text"
-            name="country"
-            value={newTrip.country}
-            onChange={handleTripChange}
-          />
+					<label>Continent</label>
+					<input
+						type='text'
+						name='continent'
+						value={newTrip.continent}
+						onChange={handleTripChange}
+					/>
 
-          <label>Continent</label>
-          <select>
-            <input
-              type="text"
-              name="continent"
-              value={newTrip.continent}
-              onChange={handleTripChange}
-            />
-            <option value="africa">Africa</option>
-            <option value="asia">Asia</option>
-            <option value="europe">Europe</option>
-            <option value="north-america">North America</option>
-			<option value="oceania">Oceania</option>
-            <option value="south-america">South America</option>
-            
-          </select>
-          <label>Season</label>
-          <input
-            type="text"
-            name="season"
-            value={newTrip.season}
-            onChange={handleTripChange}
-          />
+					<label>Season</label>
+					<input
+						type='text'
+						name='season'
+						value={newTrip.season}
+						onChange={handleTripChange}
+					/>
 
-          <label>Image</label>
-          <input
-						type="text"
-						name="image"
+					<label>Image</label>
+					<input
+						type='text'
+						name='image'
 						value={newTrip.image}
 						onChange={handleTripChange}
 					/>
 
-          <label>Rating</label>
-          <input
-						type="number"
-						name="rating"
+					<label>Rating</label>
+					<input
+						type='number'
+						name='rating'
 						value={newTrip.rating}
 						onChange={handleTripChange}
 					/>
@@ -99,7 +84,6 @@ const CreateTrip = ({ newTrip, setNewTrip, setTrips, updated, setUpdated }) => {
 			</div>
 		</>
 	);
-     
 };
 
 export default CreateTrip;
