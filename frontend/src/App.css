@@ -131,3 +131,7 @@ nav {
   transform: translate(-50%, -50%);
   z-index: 1;
 }
+
+#displayB {
+  font-size: 20px;
+}
