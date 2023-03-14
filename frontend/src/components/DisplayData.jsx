@@ -47,7 +47,6 @@ const DisplayData = (props) => {
 				}}></div>
 			<p>{props.trip.country}</p>
 			<p>{props.trip.continent}</p>
-			<button id="displayB"onClick={(e) => handleDelete(props.trip)}>DELETE</button>
 			<form id="displayForm"onSubmit={(e) => handleUpdate(e, props.trip)}>
 				<input
 					type='text'
@@ -63,6 +62,7 @@ const DisplayData = (props) => {
 				/>
 				<button type='submit'>Update</button>
 			</form>
+			<button id="displayB" onClick={(e) => handleDelete(props.trip)}>Delete</button>
 		</div>
 		
 	);

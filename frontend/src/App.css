@@ -124,11 +124,19 @@ nav {
 .small-trip-data {
   border-radius: 5px;
 }
-#displayB,
+/* #displayB, */
 #displayForm {
   position: absolute;
-  top: 70%;
+  bottom:5%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
+  
+}
+
+#displayB {
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+
 }
