@@ -34,32 +34,22 @@ const DisplayData = (props) => {
 
 	// console.log(props.trip._id)
 
-	return (
-		<div>
-			<div>
-				<img src={props.trip.image} className={props.className} />
-			</div>
-			<p>{props.trip.country}</p>
-			<p>{props.trip.continent}</p>
-			<button onClick={(e) => handleDelete(props.trip)}>DELETE</button>
+    return(
+        <div>
+            <div>
+                <img src={props.trip.image} className={props.className} />
+            </div>
+            {/* <p>{props.trip.country}</p>
+            <p>{props.trip.continent}</p>
+            <button onClick={(e) => handleDelete(props.trip)}>DELETE</button>
 
-			<form onSubmit={(e) => handleUpdate(e, props.trip)}>
-				<input
-					type='text'
-					name='country'
-					placeholder={props.trip.continent}
-					onChange={handleInputEdit}
-				/>
-				<input
-					type='text'
-					name='continent'
-					placeholder={props.trip.country}
-					onChange={handleInputEdit}
-				/>
-				<button type='submit'>Update</button>
-			</form>
-		</div>
-	);
-};
+            <form onSubmit={(e)=> handleUpdate(e, props.trip)}>
+                <input type='text' name='country' placeholder={props.trip.continent} onChange={handleInputEdit}/>
+                <input type='text' name='continent' placeholder={props.trip.country} onChange={handleInputEdit}/>
+                <button type='submit'>Update</button>
+            </form> */}
+        </div>
+    )
+}
 
 export default DisplayData;
