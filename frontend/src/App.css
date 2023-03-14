@@ -144,6 +144,7 @@ nav {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  
 }
 
 .card1:hover {
@@ -156,4 +157,3 @@ nav {
 .small-trip-data {
   border-radius: 5px;
 }
-
