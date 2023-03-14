@@ -15,24 +15,50 @@ function App() {
 		image: '',
 		description: '',
 	});
-	const [updated,setUpdated] = useState(false);
+	const [updated, setUpdated] = useState(false);
 
 	// const handleTripChange = (e) => {
 	//   setNewTrip({...newTrip, [e.target.name]: e.target.value})
 	// }
 	const getTrips = () => {
-		axios.get('http://localhost:3000/sights').then((res)=> {
-			setTrips(res.data)
+		axios.get('http://localhost:3000/sights').then((res) => {
+			setTrips(res.data);
 		});
 	};
 
+	const handleUpdate = (e, trip) => {
+		e.preventDefault();
+		axios
+			.put(`http://localhost:3000/sights/${trip._id}`, { ...trip })
+			.then(() => {
+				axios.get('http://localhost:3000/sights').then((res) => {
+					setTrips(res.data);
+				});
+			});
+	};
 
-	useEffect(()=> {
+	const handleInputEdit = (e, id) => {
+		const name = e.target.name;
+		const value = e.target.value;
+		setTrips((prevState) =>
+			prevState.map((trip) => {
+				if (trip._id === id) {
+					return {
+						...trip,
+						[name]: value,
+					};
+				} else {
+					return trip;
+				}
+			})
+		);
+	};
+	useEffect(() => {
 		getTrips();
-	},[])
-	useEffect(()=> {
+	}, []);
+	useEffect(() => {
 		getTrips();
-	},[updated])
+	}, [updated]);
 
 	// const handleTripChange = (e) => {
 	// 	const name = e.target.name;
