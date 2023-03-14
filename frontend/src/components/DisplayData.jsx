@@ -5,8 +5,8 @@ const DisplayData = (props) => {
 	const [editedTrip, setEditedTrip] = useState({});
 
 	const handleDelete = (siteData) => {
-		axios.delete(`http://localhost:3000/sights/${siteData._id}`).then(() => {
-			axios.get(`http://localhost:3000/sights`).then((res) => {
+		axios.delete(`http://https://sightseer-backend.onrender.com/sights/${siteData._id}`).then(() => {
+			axios.get(`http://https://sightseer-backend.onrender.com/sights`).then((res) => {
 				props.setTrips(res.data);
 			});
 		});
@@ -15,9 +15,9 @@ const DisplayData = (props) => {
 	const handleUpdate = (e, trip) => {
 		e.preventDefault();
 		axios
-			.put(`http://localhost:3000/sights/${trip._id}`, editedTrip)
+			.put(`http://https://sightseer-backend.onrender.com/sights/${trip._id}`, editedTrip)
 			.then(() => {
-				axios.get(`http://localhost:3000/sights`).then((res) => {
+				axios.get(`http://https://sightseer-backend.onrender.com/sights`).then((res) => {
 					props.setTrips(res.data);
 				});
 			});

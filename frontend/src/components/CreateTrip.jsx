@@ -13,8 +13,8 @@ const CreateTrip = ({ newTrip, setNewTrip, setTrips, updated, setUpdated }) => {
 	};
 	const handleNewTripSubmit = (e) => {
 		e.preventDefault();
-		axios.post('http://localhost:3000/sights', newTrip).then(() => {
-			axios.get('http://localhost:3000/sights').then((res) => {
+		axios.post('http://https://sightseer-backend.onrender.com/sights', newTrip).then(() => {
+			axios.get('http://https://sightseer-backend.onrender.com/sights').then((res) => {
 				setTrips(res.data);
 				setUpdated(!updated);
 				setNewTrip({
