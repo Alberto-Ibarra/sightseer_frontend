@@ -146,14 +146,28 @@ nav {
   background-repeat: no-repeat;
   
 }
-
+.card1 button,
+.card1 form {
+  visibility: hidden;
+}
 .card1:hover {
   box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
   transform: translateY(-3px) scale(1.1);
 }
-
+.card1:hover button,
+.card1:hover form {
+  visibility: visible;
+}
 
 .large-trip-data,
 .small-trip-data {
   border-radius: 5px;
+}
+#displayB,
+#displayForm {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
 }
