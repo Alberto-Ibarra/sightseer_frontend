@@ -17,7 +17,7 @@ const CreateTrip = ({ newTrip, setNewTrip, setTrips, updated, setUpdated }) => {
 			axios.get('http://localhost:3000/sights').then((res) => {
 				setTrips(res.data);
 				setUpdated(!updated);
-        setNewTrip({
+				setNewTrip({
 					country: '',
 					continent: '',
 					rating: 0,
@@ -58,15 +58,25 @@ const CreateTrip = ({ newTrip, setNewTrip, setTrips, updated, setUpdated }) => {
 					/>
 
 					<label>Image</label>
-					<input type='text' name='image' onChange={handleTripChange} />
+					<input
+						type='text'
+						name='image'
+						value={newTrip.image}
+						onChange={handleTripChange}
+					/>
 
 					<label>Rating</label>
-					<input type='number' name='rating' onChange={handleTripChange} />
+					<input
+						type='number'
+						name='rating'
+						value={newTrip.rating}
+						onChange={handleTripChange}
+					/>
 
 					<label>Description</label>
 					<textarea
 						name='description'
-						value={newTrip.image}
+						value={newTrip.description}
 						onChange={handleTripChange}
 					/>
 					<input className='button' type='submit' value='Add Trip' />
