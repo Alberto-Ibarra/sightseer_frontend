@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import "./App.css"
 import axios from 'axios';
 import CreateTrip from './components/CreateTrip';
-import DisplayData from './components/DisplayData';
+import DisplayData from './components/DisplayData'
+import Navbar from './components/Navbar';
 
 function App() {
 	const [trips, setTrips] = useState([]);
@@ -77,7 +78,8 @@ function App() {
 	// };
 
 	return (
-		<div>		
+		<div>
+			<Navbar />
 			<CreateTrip
 				// handleTripChange={handleTripChange}
 				// handleNewTripSubmit={handleNewTripSubmit}
@@ -89,18 +91,20 @@ function App() {
 				setUpdated={setUpdated}
 				updated={updated}
 			/>
-			<section>
-				{trips.map((trip) => {
-					return (
-						<DisplayData
-							setTrips={setTrips}
-							trip={trip}
-							handleInputEdit={handleInputEdit}
-							handleUpdate={handleUpdate}
-						/>
-					);
-				})}
-			</section>
+			<div className='grid'>
+				{
+				trips.map((trip, index) => {
+					const className = index % 4 === 0 ? 'large-trip-data' : 'small-trip-data';
+					return(
+					<DisplayData 
+					setTrips={setTrips}
+					trip = {trip}
+					className={className}
+					/>
+					)
+				})
+				}
+			</div>
 		</div>
 	);
 }
