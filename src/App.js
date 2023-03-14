@@ -21,7 +21,7 @@ function App() {
 	//   setNewTrip({...newTrip, [e.target.name]: e.target.value})
 	// }
 	const getTrips = () => {
-		axios.get('http://https://sightseer-backend.onrender.com/sights').then((res) => {
+		axios.get('https://sightseer-backend.onrender.com/sights').then((res) => {
 			setTrips(res.data);
 		});
 	};
@@ -29,9 +29,9 @@ function App() {
 	const handleUpdate = (e, trip) => {
 		e.preventDefault();
 		axios
-			.put(`http://https://sightseer-backend.onrender.com/sights/${trip._id}`, { ...trip })
+			.put(`https://sightseer-backend.onrender.com/sights/${trip._id}`, { ...trip })
 			.then(() => {
-				axios.get('http://https://sightseer-backend.onrender.com/sights').then((res) => {
+				axios.get('https://sightseer-backend.onrender.com/sights').then((res) => {
 					setTrips(res.data);
 				});
 			});
@@ -70,8 +70,8 @@ function App() {
 	// };
 	// const handleNewTripSubmit = (e) => {
 	// 	e.preventDefault();
-	// 	axios.post('http://https://sightseer-backend.onrender.com/sights', newTrip).then(() => {
-	// 		axios.get('http://https://sightseer-backend.onrender.com/sights').then((res) => {
+	// 	axios.post('https://sightseer-backend.onrender.com/sights', newTrip).then(() => {
+	// 		axios.get('https://sightseer-backend.onrender.com/sights').then((res) => {
 	// 			setTrips(res.data);
 	// 		});
 	// 	});
