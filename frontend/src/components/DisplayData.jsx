@@ -34,22 +34,38 @@ const DisplayData = (props) => {
 
 	// console.log(props.trip._id)
 
-    return(
-        <div>
-            <div>
-                <img src={props.trip.image} className={props.className} />
-            </div>
-            {/* <p>{props.trip.country}</p>
-            <p>{props.trip.continent}</p>
-            <button onClick={(e) => handleDelete(props.trip)}>DELETE</button>
-
-            <form onSubmit={(e)=> handleUpdate(e, props.trip)}>
-                <input type='text' name='country' placeholder={props.trip.continent} onChange={handleInputEdit}/>
-                <input type='text' name='continent' placeholder={props.trip.country} onChange={handleInputEdit}/>
-                <button type='submit'>Update</button>
-            </form> */}
-        </div>
-    )
-}
+	return (
+		
+		<div className={props.className}>
+			<div
+				style={{
+					backgroundImage: `url(${props.trip.image})`,
+					height: '100%',
+					width: '100%',
+					backgroundSize: 'cover',
+					backgroundPosition: 'center',
+				}}></div>
+			<p>{props.trip.country}</p>
+			<p>{props.trip.continent}</p>
+			<button id="displayB"onClick={(e) => handleDelete(props.trip)}>DELETE</button>
+			<form id="displayForm"onSubmit={(e) => handleUpdate(e, props.trip)}>
+				<input
+					type='text'
+					name='country'
+					placeholder={props.trip.continent}
+					onChange={handleInputEdit}
+				/>
+				<input
+					type='text'
+					name='continent'
+					placeholder={props.trip.country}
+					onChange={handleInputEdit}
+				/>
+				<button type='submit'>Update</button>
+			</form>
+		</div>
+		
+	);
+		};
 
 export default DisplayData;
