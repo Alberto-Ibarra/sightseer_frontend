@@ -36,14 +36,7 @@ const DisplayData = (props) => {
 
 	return (
 		<div>
-			<div className={props.className} style={{
-                backgroundImage: `url(${props.trip.image})`,
-                // height: '100%',
-                // width: '100%',
-                // backgroundSize: 'cover',
-                // backgroundPosition: 'center'
-            }} >
-			</div>
+			<div className={props.className} style={{backgroundImage: `url(${props.trip.image})`}}></div>
 			{/* <p>{props.trip.country}</p>
 			<p>{props.trip.continent}</p>
 			<button onClick={(e) => handleDelete(props.trip)}>DELETE</button>

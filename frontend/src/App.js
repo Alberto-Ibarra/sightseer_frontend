@@ -68,7 +68,7 @@ function App() {
 			<div className='grid'>
 				{
 				trips.map((trip, index) => {
-					const className = index % 4 === 0 ? 'large-trip-data card1 card-tall card-wide' : 'card1 small-trip-data';
+					const className = index % 4 === 0 ? ' card1 card-tall card-wide' : 'card1';
 					return(
 					<DisplayData 
 					setTrips={setTrips}
