@@ -36,12 +36,19 @@ const DisplayData = (props) => {
 
 	return (
 		<div>
-			<div className={props.className} style={{backgroundImage: `url(${props.trip.image})`}}></div>
-			{/* <p>{props.trip.country}</p>
+			<div className={props.className} style={{
+                backgroundImage: `url(${props.trip.image})`,
+                height: '100%',
+                width: '100%',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
+            }} >
+			</div>
+			<p>{props.trip.country}</p>
 			<p>{props.trip.continent}</p>
-			<button onClick={(e) => handleDelete(props.trip)}>DELETE</button>
+			<button style={{zIndex:1}} onClick={(e) => handleDelete(props.trip)}>DELETE</button>
 
-			<form onSubmit={(e) => handleUpdate(e, props.trip)}>
+			<form  style={{zIndex: 1}} onSubmit={(e) => handleUpdate(e, props.trip)}>
 				<input
 					type='text'
 					name='country'
@@ -55,7 +62,7 @@ const DisplayData = (props) => {
 					onChange={handleInputEdit}
 				/>
 				<button type='submit'>Update</button>
-			</form> */}
+			</form>
 		</div>
 	);
 };
