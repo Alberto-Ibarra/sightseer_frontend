@@ -1,3 +1,5 @@
+# Getting Started with Create React App
 
-# Project_3
-# sightseer_frontend
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+SightSeer BLOG
