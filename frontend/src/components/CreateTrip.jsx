@@ -99,17 +99,7 @@ const CreateTrip = ({ newTrip, setNewTrip, setTrips, updated, setUpdated }) => {
 			</div>
 		</>
 	);
-          <label>Description</label>
-          <textarea
-            name="description"
-            value={newTrip.description}
-            onChange={handleTripChange}
-          />
-          <input className="button" type="submit" value="Add Trip" />
-        </form>
-      </div>
-    </>
-  );
+     
 };
 
 export default CreateTrip;
