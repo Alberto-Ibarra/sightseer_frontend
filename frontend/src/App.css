@@ -119,12 +119,19 @@ nav {
   margin-top: 20px;
 }
 
+.card-tall {
+  grid-row: span 2 / auto;
+}
+.card-wide {
+  grid-column: span 2 / auto;
+} 
+
 @media screen and (min-width: 600px) {
   .card-tall {
     grid-row: span 2 / auto;
   }
 
-  .card-wide{
+  .card-wide {
     grid-column: span 2 / auto;
   }
 } 
@@ -134,8 +141,6 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #353535;
-  color: #fff;
   height: 100%;
   width: 100%;
   border-radius: 4px;
@@ -152,8 +157,4 @@ nav {
 }
 
 
-.large-trip-data,
-.small-trip-data {
-  border-radius: 5px;
-}
 
