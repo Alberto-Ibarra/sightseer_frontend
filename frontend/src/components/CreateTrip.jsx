@@ -66,7 +66,7 @@ const CreateTrip = ({ newTrip, setNewTrip, setTrips, updated, setUpdated }) => {
 					<label>Description</label>
 					<textarea
 						name='description'
-						value={newTrip.image}
+						value={newTrip.description}
 						onChange={handleTripChange}
 					/>
 					<input className='button' type='submit' value='Add Trip' />
