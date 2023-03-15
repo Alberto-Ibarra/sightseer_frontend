@@ -17,38 +17,42 @@ function App() {
 		description: '',
 	});
 	const [updated, setUpdated] = useState(false);
+	const [createTripVisible, setCreateTripVisible] = useState(false);
 
 	const getTrips = () => {
 		axios.get('https://sightseer-backend.onrender.com/sights').then((res) => {
 			setTrips(res.data);
 		});
 	};
-
+  	const handleCreateTripVisible = () => {
+		setCreateTripVisible(!createTripVisible);
+	};
 	
 
-	// useEffect(() => {
-	// 	getTrips();
-	// }, []);
-	// useEffect(() => {
-	// 	getTrips();
-	// }, [updated]);
+	useEffect(() => {
+		getTrips();
+	}, []);
+	useEffect(() => {
+		getTrips();
+	}, [updated]);
 
 
 	return (
 		<div>
 			<Navbar />
 			<NavButtons
-				getTrips={getTrips()}
+				getTrips={getTrips}
 				setTrips={setTrips}
+				handleCreateTripVisible={handleCreateTripVisible}
 			/>
-			<CreateTrip
+			{createTripVisible && <CreateTrip
 				trips={trips}
 				newTrip={newTrip}
 				setNewTrip={setNewTrip}
 				setTrips={setTrips}
 				setUpdated={setUpdated}
 				updated={updated}
-			/>
+			/>}
 			<div className='grid'>
 				{
 				trips.map((trip, index) => {
