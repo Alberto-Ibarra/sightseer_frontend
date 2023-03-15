@@ -1,12 +1,12 @@
-
 * {
   margin: 0;
   /* padding: 0; */
 }
 
-/* ------------------------from style ------   */
-/* h2 {
+/* ------------------------form style ------   */
+h2 {
   text-align: center;
+  padding: 10px;
 }
 
 input[type="text"],
@@ -30,10 +30,8 @@ input {
 }
 div {
   border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-  margin-left: 40px;
-  margin-right: 40px;
+  margin-right: 20px;
+  margin-left: 20px;
 }
 
 textarea {
@@ -52,8 +50,8 @@ textarea {
   color: white;
   font-size: larger;
   cursor: pointer;
-} */
-
+}
+/* ============ */
 body {
   /* color: whitesmoke; */
   background-color: whitesmoke;
@@ -67,53 +65,66 @@ body {
   font-family: "Merriweather", serif;
 }
 
-.navBtn{
+.navBtn {
   display: flex;
   justify-content: space-around;
   background-color: whitesmoke;
   margin-top: 20px;
 }
 
-  .btn{
-  display:inline-block;
-  padding:0.35em 1.2em;
-  border:0.1em solid ;
-  margin:0 0.3em 0.3em 0;
-  border-radius:0.12em;
+.btn {
+  display: inline-block;
+  padding: 0.35em 1.2em;
+  border: 0.1em solid;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 0.12em;
   box-sizing: border-box;
-  text-decoration:none;
-  font-family:'Roboto',sans-serif;
-  font-weight:300;
-  color:#333;
-  text-align:center;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #333;
+  text-align: center;
   transition: all 0.2s;
   border-radius: 2px;
 }
-  .btn:hover{
-    color:#000000;
-    background-color:#FFFFFF;
+.btn:hover {
+  color: #000000;
+  background-color: #ffffff;
+}
+@media all and (max-width: 30em) {
+  .button1 {
+    display: block;
+    margin: 0.4em auto;
   }
-  @media all and (max-width:30em){
-  .button1{
-    display:block;
-    margin:0.4em auto;
-  }
-  }
+}
 
-.bouncy{
+.bouncy {
   animation: bouncy 5s infinite linear;
   position: relative;
 }
 @keyframes bouncy {
-  0% { top: 0em }
-  40% { top: 0em }
-  43% { top: -0.9em }
-  46% { top: 0em }
-  48% { top: -0.4em }
-  50% { top: 0em }
-  100% { top: 0em }
+  0% {
+    top: 0em;
+  }
+  40% {
+    top: 0em;
+  }
+  43% {
+    top: -0.9em;
+  }
+  46% {
+    top: 0em;
+  }
+  48% {
+    top: -0.4em;
+  }
+  50% {
+    top: 0em;
+  }
+  100% {
+    top: 0em;
+  }
 }
-
 
 .grid {
   display: grid;
@@ -123,7 +134,6 @@ body {
   margin-top: 20px;
 }
 
-
 @media screen and (min-width: 600px) {
   .card-tall {
     grid-row: span 2 / auto;
@@ -132,7 +142,7 @@ body {
   .card-wide {
     grid-column: span 2 / auto;
   }
-} 
+}
 
 .card1 {
   display: flex;
@@ -147,14 +157,14 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  
 }
 .card1 button,
 .card1 form {
   visibility: hidden;
 }
 .card1:hover {
-  box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
+  box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em,
+    rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
   transform: translateY(-3px) scale(1.1);
 }
 .card1:hover button,
@@ -169,11 +179,10 @@ body {
 /* #displayB, */
 #displayForm {
   position: absolute;
-  bottom:5%;
+  bottom: 5%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
-  
 }
 
 #displayB {
@@ -181,5 +190,3 @@ body {
   right: 5%;
   bottom: 5%;
 }
-
-
