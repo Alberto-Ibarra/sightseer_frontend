@@ -17,6 +17,7 @@ function App() {
 		description: '',
 	});
 	const [updated, setUpdated] = useState(false);
+	const [createTripVisible, setCreateTripVisible] = useState(false);
 
 
 	const getTrips = () => {
@@ -24,7 +25,9 @@ function App() {
 			setTrips(res.data);
 		});
 	};
-
+  	const handleCreateTripVisible = () => {
+		setCreateTripVisible(!createTripVisible);
+	};
 	
 
 	useEffect(() => {
@@ -41,15 +44,16 @@ function App() {
 			<NavButtons
 				getTrips={getTrips}
 				setTrips={setTrips}
+				handleCreateTripVisible={handleCreateTripVisible}
 			/>
-			<CreateTrip
+			{createTripVisible && <CreateTrip
 				trips={trips}
 				newTrip={newTrip}
 				setNewTrip={setNewTrip}
 				setTrips={setTrips}
 				setUpdated={setUpdated}
 				updated={updated}
-			/>
+			/>}
 			<div className='grid'>
 				{
 				trips.map((trip, index) => {
