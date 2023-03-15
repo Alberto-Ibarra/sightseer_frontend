@@ -37,7 +37,7 @@ const DisplayData = (props) => {
 	return (
 		
 		<div className={props.className}>
-			<div
+			<div id='image'
 				style={{
 					backgroundImage: `url(${props.trip.image})`,
 					height: '100%',
@@ -47,7 +47,12 @@ const DisplayData = (props) => {
 				}}></div>
 			<p>{props.trip.country}</p>
 			<p>{props.trip.continent}</p>
+			
 			<form id="displayForm"onSubmit={(e) => handleUpdate(e, props.trip)}>
+				<div id="description">
+					{props.trip.description}
+				</div>
+				<br></br>
 				<input
 					type='text'
 					name='country'
