@@ -18,9 +18,9 @@ Live demo [here](https://sightseer-backend.onrender.com/sights)
 ---
 
 ### Some screenshots 
-![SC2](assets/SC2.png)
+![SC2](./Assets/SC2.png)
 ---
-![SC2](assets/SC3.png)
+![SC2](./Assets/SC3.png)
 ---
 ---
 ---
