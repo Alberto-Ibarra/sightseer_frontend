@@ -34,6 +34,7 @@ const CreateTrip = ({ newTrip, setNewTrip, setTrips, updated, setUpdated }) => {
 	};
 	return (
 		<>
+		
 			<div className='container'>
 				<div className='title'>Publish Your Trip</div>
 				<form className='card' onSubmit={handleNewTripSubmit}>
