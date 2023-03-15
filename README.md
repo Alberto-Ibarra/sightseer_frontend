@@ -12,7 +12,7 @@ Live demo [here](https://sightseer-backend.onrender.com/sights)
 ---
 ---
  ## Wireframe
- ![picture](assets/SC1.png)
+ ![picture](./Assets/SC1.png)
 
 ---
 ---
