@@ -17,11 +17,23 @@ const NavButtons = (props) => {
 					</button>
 					<button
 						className='btn bouncy'
-						style={{ animationDelay: '0.07s' }}
+						style={{
+							animationDelay: '0.07s',
+							backgroundImage: "url('https://i.ibb.co/CW5Wvry/buttonpng.png')",
+							backgroundSize: 'auto',
+							backgroundPosition: 'center',
+							backgroundRepeat: 'no-repeat',
+							borderRadius: '5px',
+							border: 'none',
+							outline: 'none',
+							cursor: 'pointer',
+							height: '100px',
+						}}
 						name='North America'
 						onClick={getContinent}>
 						North America
 					</button>
+
 					<button
 						className='btn bouncy'
 						style={{ animationDelay: '0.14s' }}
