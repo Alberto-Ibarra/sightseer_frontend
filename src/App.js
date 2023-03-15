@@ -4,6 +4,7 @@ import axios from 'axios';
 import CreateTrip from './components/CreateTrip';
 import DisplayData from './components/DisplayData'
 import Navbar from './components/Navbar';
+import NavButtons from './components/NavButtons';
 
 function App() {
 	const [trips, setTrips] = useState([]);
@@ -17,73 +18,31 @@ function App() {
 	});
 	const [updated, setUpdated] = useState(false);
 
-	// const handleTripChange = (e) => {
-	//   setNewTrip({...newTrip, [e.target.name]: e.target.value})
-	// }
+
 	const getTrips = () => {
 		axios.get('https://sightseer-backend.onrender.com/sights').then((res) => {
 			setTrips(res.data);
 		});
 	};
 
-	const handleUpdate = (e, trip) => {
-		e.preventDefault();
-		axios
-			.put(`https://sightseer-backend.onrender.com/sights/${trip._id}`, { ...trip })
-			.then(() => {
-				axios.get('https://sightseer-backend.onrender.com/sights').then((res) => {
-					setTrips(res.data);
-				});
-			});
-	};
+	
 
-	const handleInputEdit = (e, id) => {
-		const name = e.target.name;
-		const value = e.target.value;
-		setTrips((prevState) =>
-			prevState.map((trip) => {
-				if (trip._id === id) {
-					return {
-						...trip,
-						[name]: value,
-					};
-				} else {
-					return trip;
-				}
-			})
-		);
-	};
-	useEffect(() => {
-		getTrips();
-	}, []);
-	useEffect(() => {
-		getTrips();
-	}, [updated]);
+	// useEffect(() => {
+	// 	getTrips();
+	// }, []);
+	// useEffect(() => {
+	// 	getTrips();
+	// }, [updated]);
 
-	// const handleTripChange = (e) => {
-	// 	const name = e.target.name;
-	// 	const value = e.target.value;
-	// 	setNewTrip((prevState) => ({
-	// 		...prevState,
-	// 		[name]: value,
-	// 	}));
-	// };
-	// const handleNewTripSubmit = (e) => {
-	// 	e.preventDefault();
-	// 	axios.post('https://sightseer-backend.onrender.com/sights', newTrip).then(() => {
-	// 		axios.get('https://sightseer-backend.onrender.com/sights').then((res) => {
-	// 			setTrips(res.data);
-	// 		});
-	// 	});
-	// };
 
 	return (
 		<div>
 			<Navbar />
+			<NavButtons
+				getTrips={getTrips()}
+				setTrips={setTrips}
+			/>
 			<CreateTrip
-				// handleTripChange={handleTripChange}
-				// handleNewTripSubmit={handleNewTripSubmit}
-				// trips={trips}
 				trips={trips}
 				newTrip={newTrip}
 				setNewTrip={setNewTrip}

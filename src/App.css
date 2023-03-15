@@ -59,12 +59,19 @@ body {
   background-color: whitesmoke;
 }
 
-nav {
+.nav {
   background-color: #333;
   font-size: 2rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7);
   color: whitesmoke;
   font-family: "Merriweather", serif;
+}
+
+.navBtn{
+  display: flex;
+  justify-content: space-around;
+  background-color: whitesmoke;
+  margin-top: 20px;
 }
 
 .grid {
@@ -132,5 +139,4 @@ nav {
   position: absolute;
   right: 5%;
   bottom: 5%;
-
 }
