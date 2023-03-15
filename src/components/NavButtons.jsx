@@ -12,13 +12,13 @@ const NavButtons = (props) => {
     return (
         <div>
             <nav className='navBtn'>
-                <button className='btn' onClick={props.getTrips}>View All</button>
-                <button className='btn' name='North America' onClick={getContinent}>North America</button>
-                <button className='btn' name='South America' onClick={getContinent}>South America</button>
-                <button className='btn' name='Asia' onClick={getContinent}>Asia</button>
-                <button className='btn' name='Europe' onClick={getContinent}>Europe</button>
-                <button className='btn' name='Australia' onClick={getContinent}>Australia</button>
-                <button className='btn'>Add Trip</button>
+                <button className='btn bouncy' onClick={props.getTrips}>View All</button>
+                <button className='btn bouncy' style={{animationDelay:"0.07s"}} name='North America' onClick={getContinent}>North America</button>
+                <button className='btn bouncy' style={{animationDelay:"0.14s"}} name='South America' onClick={getContinent}>South America</button>
+                <button className='btn bouncy' style={{animationDelay:"0.21s"}} name='Asia' onClick={getContinent}>Asia</button>
+                <button className='btn bouncy' style={{animationDelay:"0.28s"}} name='Europe' onClick={getContinent}>Europe</button>
+                <button className='btn bouncy' style={{animationDelay:"0.35s"}} name='Australia' onClick={getContinent}>Australia</button>
+                <button className='btn bouncy' style={{animationDelay:"0.42s"}} >Add Trip</button>
             </nav>
         </div>
     )

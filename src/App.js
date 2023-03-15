@@ -27,19 +27,19 @@ function App() {
 
 	
 
-	// useEffect(() => {
-	// 	getTrips();
-	// }, []);
-	// useEffect(() => {
-	// 	getTrips();
-	// }, [updated]);
+	useEffect(() => {
+		getTrips();
+	}, []);
+	useEffect(() => {
+		getTrips();
+	}, [updated]);
 
 
 	return (
 		<div>
 			<Navbar />
 			<NavButtons
-				getTrips={getTrips()}
+				getTrips={getTrips}
 				setTrips={setTrips}
 			/>
 			<CreateTrip
