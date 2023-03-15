@@ -13,20 +13,24 @@ const CreateTrip = ({ newTrip, setNewTrip, setTrips, updated, setUpdated }) => {
 	};
 	const handleNewTripSubmit = (e) => {
 		e.preventDefault();
-		axios.post('https://sightseer-backend.onrender.com/sights', newTrip).then(() => {
-			axios.get('https://sightseer-backend.onrender.com/sights').then((res) => {
-				setTrips(res.data);
-				setUpdated(!updated);
-				setNewTrip({
-					country: '',
-					continent: '',
-					rating: 0,
-					season: '',
-					image: '',
-					description: '',
-				});
+		axios
+			.post('https://sightseer-backend.onrender.com/sights', newTrip)
+			.then(() => {
+				axios
+					.get('https://sightseer-backend.onrender.com/sights')
+					.then((res) => {
+						setTrips(res.data);
+						setUpdated(!updated);
+						setNewTrip({
+							country: '',
+							continent: '',
+							rating: 0,
+							season: '',
+							image: '',
+							description: '',
+						});
+					});
 			});
-		});
 	};
 	return (
 		<>
