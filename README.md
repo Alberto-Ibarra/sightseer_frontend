@@ -31,12 +31,17 @@ Live demo [here](https://sightseer-backend.onrender.com/sights)
 * Node.js
 * HTML
 * CSS
-
+### Dependencies used
+* Axios
+* dotenv
+* express
+* mongoose
 ## Challenges faced 
 * Dealing with CSS.
 * Backend switching when we deploy.
 * Making seed data
-* update routes 
+* update routes
+* Github merge conflict
 
 ## most useful tool we relied on
 * Git
