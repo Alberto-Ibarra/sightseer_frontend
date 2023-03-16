@@ -62,6 +62,7 @@ body {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7);
   color: whitesmoke;
   font-family: "Merriweather", serif;
+  
 }
 
 .navBtn {
@@ -192,7 +193,61 @@ body {
   right: 15%;
   bottom: 5%;
 }
+.dropdown-container {
+  position: relative;
+  display: inline-block;
+}
 
+.dropdown-button {
+  background-color: #2196F3;
+  color: rgb(253, 253, 253);
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  display: none;
+}
+
+.dropdown-container:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu form {
+  padding: 10px;
+  background-color: #868080;
+  min-width: 250px;
+}
+
+.dropdown-menu label {
+  display: block;
+  font-weight: bold;
+}
+
+.dropdown-menu input {
+  padding: 8px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 3px;
+}
+
+.dropdown-menu button {
+  background-color: #2196F3;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.dropdown-menu button:hover {
+  background-color: #0b7dda;
+}
 .cardBtn {
   background-color: blue; /* Green */
   border: none;
