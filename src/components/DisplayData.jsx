@@ -32,12 +32,17 @@ const DisplayData = (props) => {
 		}));
 	};
 
-
+	const showDescription = () => {
+		axios.get(`https://sightseer-backend.onrender.com/sights`).then((res) => {
+					props.setTrips(res.data.description);
+				});
+	}
 	// console.log(props.trip._id)
 
 	return (
 		
 		<div className={props.className}>
+			
 			<div id='image'
 				style={{
 					backgroundImage: `url(${props.trip.image})`,
@@ -45,7 +50,9 @@ const DisplayData = (props) => {
 					width: '100%',
 					backgroundSize: 'cover',
 					backgroundPosition: 'center',
-				}}></div>
+				}}>
+				<div id="description">{props.trip.description}</div>
+				</div>
 			<p>{props.trip.country}</p>
 			<p>{props.trip.continent}</p>
 			
@@ -65,6 +72,8 @@ const DisplayData = (props) => {
 				<button type='submit'>Update</button>
 			</form>
 			<button id="displayB" onClick={(e) => handleDelete(props.trip)}>Delete</button>
+			<button >Show More</button>
+			
 		</div>
 		
 	);

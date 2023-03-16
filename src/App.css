@@ -160,7 +160,7 @@ body {
   background-repeat: no-repeat;
 }
 .card1 button,
-.card1 form {
+.card1 form{
   visibility: hidden;
   
 }
@@ -201,20 +201,6 @@ body {
 }
 
 
-.modal {
-  position:fixed;
-  left:0;
-  top:0;
-  right:0;
-  bottom:0;
-  background-color: black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.card1:hover #description {
+  visibility: visible;
 }
-
-.modalContainer {
-  width: 500px;
-  background-color: white;
-}
-
