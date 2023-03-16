@@ -61,8 +61,9 @@ const DisplayData = (props) => {
 					onChange={handleInputEdit}
 				/>
 				<button type='submit'>Update</button>
+				<button id="displayB" onClick={(e) => handleDelete(props.trip)}>Delete</button>
 			</form>
-			<button id="displayB" onClick={(e) => handleDelete(props.trip)}>Delete</button>
+			
 		</div>
 		
 	);
