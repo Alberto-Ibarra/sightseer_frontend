@@ -198,3 +198,22 @@ body {
   right: 5%;
   bottom: 5%;
 }
+
+
+.modal {
+  position:fixed;
+  left:0;
+  top:0;
+  right:0;
+  bottom:0;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalContainer {
+  width: 500px;
+  background-color: white;
+}
+

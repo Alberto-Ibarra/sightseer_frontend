@@ -5,6 +5,8 @@ import CreateTrip from './components/CreateTrip';
 import DisplayData from './components/DisplayData'
 import Navbar from './components/Navbar';
 import NavButtons from './components/NavButtons';
+import Popup from './components/Popup'
+
 
 function App() {
 	const [trips, setTrips] = useState([]);
@@ -18,6 +20,7 @@ function App() {
 	});
 	const [updated, setUpdated] = useState(false);
 	const [createTripVisible, setCreateTripVisible] = useState(false);
+	const [show, setShow] = useState(false)
 
 	const getTrips = () => {
 		axios.get('https://sightseer-backend.onrender.com/sights').then((res) => {
@@ -27,6 +30,7 @@ function App() {
   	const handleCreateTripVisible = () => {
 		setCreateTripVisible(!createTripVisible);
 	};
+	
 	
 
 	useEffect(() => {
@@ -58,15 +62,17 @@ function App() {
 				trips.map((trip, index) => {
 					const className = index % 5 === 0 ? ' card1 card-tall card-wide' : 'card1';
 					return(
-					<DisplayData 
-					setTrips={setTrips}
-					trip = {trip}
-					className={className}
-					/>
+							<DisplayData 
+							setTrips={setTrips}
+							trip = {trip}
+							className={className}
+							/>
+						
 					)
 				})
 				}
 			</div>
+
 		</div>
 	);
 }

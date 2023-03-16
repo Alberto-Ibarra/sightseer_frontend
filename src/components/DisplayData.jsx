@@ -32,6 +32,7 @@ const DisplayData = (props) => {
 		}));
 	};
 
+
 	// console.log(props.trip._id)
 
 	return (
@@ -49,10 +50,6 @@ const DisplayData = (props) => {
 			<p>{props.trip.continent}</p>
 			
 			<form id="displayForm"onSubmit={(e) => handleUpdate(e, props.trip)}>
-				<div id="description">
-					{props.trip.description}
-				</div>
-				<br></br>
 				<input
 					type='text'
 					name='country'
