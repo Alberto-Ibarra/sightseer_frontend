@@ -80,7 +80,7 @@ const handleTripChange = (e) => {
 			value={newTrip.description}
 			onChange={handleTripChange}
         />
-        <input className="button" type="submit" value="Add Trip" />
+        <input className="button" type="submit" value="Publish" />
 	</form>
     </>
 	);
