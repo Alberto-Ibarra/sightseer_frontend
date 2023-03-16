@@ -60,9 +60,11 @@ const DisplayData = (props) => {
 					placeholder={props.trip.country}
 					onChange={handleInputEdit}
 				/>
-				<button className="cardBtn" type='submit'>Update</button>
+
+				<button type='submit'>Update</button>
+				<button id="displayB" onClick={(e) => handleDelete(props.trip)}>Delete</button>
 			</form>
-			<button id="displayB" className="cardBtn delete" onClick={(e) => handleDelete(props.trip)}>Delete</button>
+
 		</div>
 		
 	);

@@ -188,8 +188,8 @@ body {
 }
 
 #displayB {
-  position: absolute;
-  right: 5%;
+  /* position: absolute; */
+  right: 15%;
   bottom: 5%;
 }
 
