@@ -9,7 +9,7 @@ h2 {
   padding: 10px;
 }
 
-input[type="text"],
+/* input[type="text"],
 select {
   width: 100%;
   padding: 12px 20px;
@@ -18,8 +18,8 @@ select {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-}
-input {
+} */
+.addForm {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -32,11 +32,11 @@ div {
   border-radius: 5px;
 }
 
-textarea {
+.addFormTextarea {
   display: inline-block;
   padding: 20px;
   margin: 6px 0;
-  width: 100%;
+  width: 97%;
   border-radius: 5px;
   padding: 20px;
   font-size: larger;
@@ -48,6 +48,7 @@ textarea {
   color: white;
   font-size: larger;
   cursor: pointer;
+  width: 100%;
 }
 /* ============ */
 body {
@@ -190,4 +191,20 @@ body {
   /* position: absolute; */
   right: 15%;
   bottom: 5%;
+}
+
+.cardBtn {
+  background-color: blue; /* Green */
+  border: none;
+  color: white;
+  padding: 4px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.delete{
+  background-color: firebrick;
 }
