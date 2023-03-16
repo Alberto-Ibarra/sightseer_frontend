@@ -1,11 +1,15 @@
 import axios from 'axios';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 
 const Login = (props) => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [login, setLogin] = useState(false);
 	const [showOverlay, setShowOverlay] = useState(false);
+useEffect(() => {
+        setEmail('');
+        setPassword('');
+    }, []);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
