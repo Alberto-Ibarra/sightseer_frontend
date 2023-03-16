@@ -42,6 +42,7 @@ const handleTripChange = (e) => {
 			name="country"
 			value={newTrip.country}
 			onChange={handleTripChange}
+			className="addForm"
         />
 
         <label>Continent</label>
@@ -50,6 +51,7 @@ const handleTripChange = (e) => {
 			name="continent"
 			value={newTrip.continent}
 			onChange={handleTripChange}
+			className="addForm"
         />
 
         <label>Season</label>
@@ -58,6 +60,7 @@ const handleTripChange = (e) => {
 			name="season"
 			value={newTrip.season}
 			onChange={handleTripChange}
+			className="addForm"
         />
         <label>Image</label>
         <input
@@ -65,6 +68,7 @@ const handleTripChange = (e) => {
 			name="image"
 			value={newTrip.image}
 			onChange={handleTripChange}
+			className="addForm"
         />
         <label>Rating</label>
         <input
@@ -72,6 +76,8 @@ const handleTripChange = (e) => {
 			name="rating"
 			value={newTrip.rating}
 			onChange={handleTripChange}
+			className="addForm"
+			
         />
 
         <label>Description</label>
@@ -79,6 +85,7 @@ const handleTripChange = (e) => {
 			name="description"
 			value={newTrip.description}
 			onChange={handleTripChange}
+			className="addFormTextarea"
         />
         <input className="button" type="submit" value="Publish" />
 	</form>
