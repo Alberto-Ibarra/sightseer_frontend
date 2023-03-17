@@ -4,6 +4,7 @@ import Popup from './Popup'
 
 const DisplayData = (props) => {
 	const [editedTrip, setEditedTrip] = useState({});
+	const [modal, setModal] = useState(false);
 
 	const handleDelete = (siteData) => {
 		axios.delete(`https://sightseer-backend.onrender.com/sights/${siteData._id}`).then(() => {
@@ -33,7 +34,15 @@ const DisplayData = (props) => {
 		}));
 	};
 
+	if(modal) {
+		document.body.classList.add('active-modal')
+	}else{
+		document.body.classList.remove('active-modal')
+	}
 
+	const toggleModal = () => {
+		setModal(!modal)
+	}
 	
 	return (
 		
@@ -53,9 +62,6 @@ const DisplayData = (props) => {
 			</div>
 			<p>{props.trip.country}</p>
 			<p>{props.trip.continent}</p>
-			
-			<p id="description">{props.trip.description}</p>
-			
 			<form id="displayForm"onSubmit={(e) => handleUpdate(e, props.trip)}>
 				<input
 					type='text'
@@ -69,9 +75,22 @@ const DisplayData = (props) => {
 					placeholder={props.trip.country}
 					onChange={handleInputEdit}
 				/>
+
 				<button type='submit'>Update</button>
+				<button id="displayB" onClick={(e) => handleDelete(props.trip)}>Delete</button>
 			</form>
-			<button id="displayB" onClick={(e) => handleDelete(props.trip)}>Delete</button>	
+			<div>
+				<button onClick={toggleModal} className="btnModal">Show More</button>
+				{modal && (
+					<div className="modal">
+						<div onClick={toggleModal} className="overlay"></div>
+						<div className="modalContent">
+							<p>{props.trip.description}</p>
+							<button className="closeBtn" onClick={toggleModal}>close</button>
+						</div>
+					</div>
+				)}
+			</div>
 		</div>
 		
 	);

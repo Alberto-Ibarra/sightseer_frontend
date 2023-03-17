@@ -5,8 +5,8 @@ import CreateTrip from './components/CreateTrip';
 import DisplayData from './components/DisplayData'
 import Navbar from './components/Navbar';
 import NavButtons from './components/NavButtons';
-import Popup from './components/Popup'
-import { PROPERTY_TYPES } from '@babel/types';
+import Register from './components/register';
+import Login from './components/Login';
 
 
 function App() {
@@ -46,33 +46,38 @@ function App() {
 	return (
 		<div>
 			<Navbar />
+			
 			<NavButtons
 				getTrips={getTrips}
 				setTrips={setTrips}
 				handleCreateTripVisible={handleCreateTripVisible}
 			/>
-			{createTripVisible && <CreateTrip
-				trips={trips}
-				newTrip={newTrip}
-				setNewTrip={setNewTrip}
-				setTrips={setTrips}
-				setUpdated={setUpdated}
-				updated={updated}
-			/>}
+			
+			{createTripVisible && (
+				<CreateTrip
+					trips={trips}
+					newTrip={newTrip}
+					setNewTrip={setNewTrip}
+					setTrips={setTrips}
+					setUpdated={setUpdated}
+					updated={updated}
+				/>
+			)}
+
 			<div className='grid'>
-				{
-				trips.map((trip, index) => {
-					const className = index % 5 === 0 ? ' card1 card-tall card-wide' : 'card1';
-					return(			
-						<DisplayData 
-						setTrips={setTrips}
-						trip = {trip}
-						className={className}
+				{trips.map((trip, index) => {
+					const className =
+						index % 5 === 0 ? ' card1 card-tall card-wide' : 'card1';
+					return (
+						<>
+						<DisplayData
+							setTrips={setTrips}
+							trip={trip}
+							className={className}
 						/>
-					)
-				})
-				}
-				
+						</>
+					);
+				})}
 			</div>
 			
 		</div>

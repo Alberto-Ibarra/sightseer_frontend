@@ -1,19 +1,25 @@
-// import React from 'react'
-// import axios from 'axios'
 
+import axios from 'axios'
+import {useState, useEffect} from 'react'
 
-// const Popup = (props) => {
-//     // const getDescription = (e) => {
-//     //     axios.get(`https://sightseer-backend.onrender.com/sights`).then((res) => {
-//     //         props.setTrips(res.data)
-//     //     })
-//     // }
+const Popup = (props) => {
+    const popupDescription = () => {
+        axios.get(`https://sightseer-backend.onrender.com/sights`).then((res) => {
+            props.setTrips(res.data)
+        });
+    }
 
-//     return(
-        
-//     )
-// }
+    useEffect(() => {
+        popupDescription()
+    })
 
-// export default Popup;
+    
+    return(
+        <div>
+            <button onClick={props.trip.description}>Show More</button>
+        </div>
+    )
+}
 
+export default Popup;
 

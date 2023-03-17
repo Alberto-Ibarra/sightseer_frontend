@@ -9,7 +9,7 @@ h2 {
   padding: 10px;
 }
 
-input[type="text"],
+/* input[type="text"],
 select {
   width: 100%;
   padding: 12px 20px;
@@ -18,8 +18,8 @@ select {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-}
-input {
+} */
+.addForm {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -32,11 +32,11 @@ div {
   border-radius: 5px;
 }
 
-textarea {
+.addFormTextarea {
   display: inline-block;
   padding: 20px;
   margin: 6px 0;
-  width: 100%;
+  width: 97%;
   border-radius: 5px;
   padding: 20px;
   font-size: larger;
@@ -48,6 +48,7 @@ textarea {
   color: white;
   font-size: larger;
   cursor: pointer;
+  width: 100%;
 }
 /* ============ */
 body {
@@ -61,6 +62,7 @@ body {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7);
   color: whitesmoke;
   font-family: "Merriweather", serif;
+  
 }
 
 .navBtn {
@@ -195,40 +197,122 @@ body {
 }
 
 #displayB {
-  position: absolute;
-  right: 5%;
+  /* position: absolute; */
+  right: 15%;
   bottom: 5%;
 }
-
-.wrapper {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.wrapper a{
+.dropdown-container {
+  position: relative;
   display: inline-block;
-  text-decoration: none;
-  padding: 15x;
-  background-color: white;
-  border-radius: 3px;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-#description {
-  visibility: hidden;
+.dropdown-button {
+  background-color: #2196F3;
+  color: rgb(253, 253, 253);
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-menu {
   position: absolute;
-  top: 0;
+  top: 100%;
   left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
+  z-index: 1;
+  display: none;
 }
 
-#description:target {
-  visibility: visible;
+.dropdown-container:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu form {
+  padding: 10px;
+  background-color: #868080;
+  min-width: 250px;
+}
+
+.dropdown-menu label {
+  display: block;
+  font-weight: bold;
+}
+
+.dropdown-menu input {
+  padding: 8px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 3px;
+}
+
+.dropdown-menu button {
+  background-color: #2196F3;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.dropdown-menu button:hover {
+  background-color: #0b7dda;
+}
+.cardBtn {
+  background-color: blue; /* Green */
+  border: none;
+  color: white;
+  padding: 4px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.delete{
+  background-color: firebrick;
+}
+
+.disabled
+body.active-modal {
+    overflow-y: hidden;
+}
+
+.btnModal {
+    padding: 5px 10px;
+    /* display: block; */
+    margin: 100px auto 0;
+    font-size: 10px;
+}
+
+.modal, .overlay {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+}
+
+.overlay {
+    background: rgba(49,49,49,0.8);
+}
+.modalContent {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1.4;
+    background: #f1f1f1;
+    padding: 14px 28px;
+    border-radius: 3px;
+    max-width: 600px;
+    min-width: 300px;
+}
+
+.closeBtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 7px;
 }
