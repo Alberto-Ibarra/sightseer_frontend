@@ -200,7 +200,35 @@ body {
   bottom: 5%;
 }
 
+.wrapper {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-.card1:hover #description {
+.wrapper a{
+  display: inline-block;
+  text-decoration: none;
+  padding: 15x;
+  background-color: white;
+  border-radius: 3px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#description {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+#description:target {
   visibility: visible;
 }

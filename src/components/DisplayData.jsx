@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import Popup from './Popup'
 
 const DisplayData = (props) => {
 	const [editedTrip, setEditedTrip] = useState({});
@@ -32,13 +33,8 @@ const DisplayData = (props) => {
 		}));
 	};
 
-	const showDescription = () => {
-		axios.get(`https://sightseer-backend.onrender.com/sights`).then((res) => {
-					props.setTrips(res.data.description);
-				});
-	}
-	// console.log(props.trip._id)
 
+	
 	return (
 		
 		<div className={props.className}>
@@ -51,10 +47,14 @@ const DisplayData = (props) => {
 					backgroundSize: 'cover',
 					backgroundPosition: 'center',
 				}}>
-				<div id="description">{props.trip.description}</div>
-				</div>
+				
+				
+       			
+			</div>
 			<p>{props.trip.country}</p>
 			<p>{props.trip.continent}</p>
+			
+			<p id="description">{props.trip.description}</p>
 			
 			<form id="displayForm"onSubmit={(e) => handleUpdate(e, props.trip)}>
 				<input
@@ -71,9 +71,7 @@ const DisplayData = (props) => {
 				/>
 				<button type='submit'>Update</button>
 			</form>
-			<button id="displayB" onClick={(e) => handleDelete(props.trip)}>Delete</button>
-			<button >Show More</button>
-			
+			<button id="displayB" onClick={(e) => handleDelete(props.trip)}>Delete</button>	
 		</div>
 		
 	);

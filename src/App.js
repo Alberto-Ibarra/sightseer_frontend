@@ -28,6 +28,7 @@ function App() {
 			setTrips(res.data);
 		});
 	};
+
   	const handleCreateTripVisible = () => {
 		setCreateTripVisible(!createTripVisible);
 	};
@@ -62,20 +63,16 @@ function App() {
 				{
 				trips.map((trip, index) => {
 					const className = index % 5 === 0 ? ' card1 card-tall card-wide' : 'card1';
-					return(
-						
-							
-							<DisplayData 
-							setTrips={setTrips}
-							trip = {trip}
-							className={className}
-							
-							/>
-							
-						
+					return(			
+						<DisplayData 
+						setTrips={setTrips}
+						trip = {trip}
+						className={className}
+						/>
 					)
 				})
 				}
+				
 			</div>
 			
 		</div>
