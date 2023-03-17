@@ -4,7 +4,7 @@ import Popup from './Popup'
 
 const DisplayData = (props) => {
 	const [editedTrip, setEditedTrip] = useState({});
-	const [modal, setModal] = useState(false);
+	const [description, setDescription] = useState(false);
 
 	const handleDelete = (siteData) => {
 		axios.delete(`https://sightseer-backend.onrender.com/sights/${siteData._id}`).then(() => {
@@ -34,20 +34,15 @@ const DisplayData = (props) => {
 		}));
 	};
 
-	if(modal) {
-		document.body.classList.add('active-modal')
-	}else{
-		document.body.classList.remove('active-modal')
-	}
+	
 
-	const toggleModal = () => {
-		setModal(!modal)
+	const toggleDescription = () => {
+		setDescription(!description)
 	}
 	
 	return (
 		
 		<div className={props.className}>
-			
 			<div id='image'
 				style={{
 					backgroundImage: `url(${props.trip.image})`,
@@ -56,13 +51,19 @@ const DisplayData = (props) => {
 					backgroundSize: 'cover',
 					backgroundPosition: 'center',
 				}}>
-				
-				
-       			
+				{description && (
+					<div className="descriptionBox">
+						<div onClick={toggleDescription}></div>
+						<div className="descriptionContent">
+							<p>{props.trip.description}</p>
+						</div>
+						<button className="closeBtn" onClick={toggleDescription}>close</button>
+					</div>
+				)}
 			</div>
 			<p>{props.trip.country}</p>
 			<p>{props.trip.continent}</p>
-			<form id="displayForm"onSubmit={(e) => handleUpdate(e, props.trip)}>
+			<form id="displayForm" onSubmit={(e) => handleUpdate(e, props.trip)}>
 				<input
 					type='text'
 					name='country'
@@ -80,16 +81,8 @@ const DisplayData = (props) => {
 				<button id="displayB" onClick={(e) => handleDelete(props.trip)}>Delete</button>
 			</form>
 			<div>
-				<button onClick={toggleModal} className="btnModal">Show More</button>
-				{modal && (
-					<div className="modal">
-						<div onClick={toggleModal} className="overlay"></div>
-						<div className="modalContent">
-							<p>{props.trip.description}</p>
-							<button className="closeBtn" onClick={toggleModal}>close</button>
-						</div>
-					</div>
-				)}
+				<button onClick={toggleDescription} className="showMoreBtn">Show More</button>
+				
 			</div>
 		</div>
 		
