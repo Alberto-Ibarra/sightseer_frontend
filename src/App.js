@@ -21,16 +21,18 @@ function App() {
 	});
 	const [updated, setUpdated] = useState(false);
 	const [createTripVisible, setCreateTripVisible] = useState(false);
-
+	
 
 	const getTrips = () => {
 		axios.get('https://sightseer-backend.onrender.com/sights').then((res) => {
 			setTrips(res.data);
 		});
 	};
+
   	const handleCreateTripVisible = () => {
 		setCreateTripVisible(!createTripVisible);
 	};
+	
 	
 
 	useEffect(() => {
@@ -67,14 +69,17 @@ function App() {
 					const className =
 						index % 5 === 0 ? ' card1 card-tall card-wide' : 'card1';
 					return (
+						<>
 						<DisplayData
 							setTrips={setTrips}
 							trip={trip}
 							className={className}
 						/>
+						</>
 					);
 				})}
 			</div>
+			
 		</div>
 	);
 }
