@@ -11,19 +11,10 @@ Live demo [here](https://sightseer-backend.onrender.com/sights)
 
 ---
 ---
- ## Wireframe
- ![picture](./Assets/SC1.png)
 
----
----
+![7AEB4C21-3AC7-4991-AC60-59972B8F5DD9](https://user-images.githubusercontent.com/93948054/226514441-7ffe8995-9c69-407a-8cac-5f5a74ea34d4.jpeg)
 
-### Some screenshots 
-![SC2](./Assets/SC2.png)
----
-![SC2](./Assets/SC3.png)
----
----
----
+
 ## Technologies Used
 * React
 * Express
